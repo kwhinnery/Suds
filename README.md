@@ -33,7 +33,7 @@ method on the client to call specific services on your endpoint.  Impressive, no
 
 Constructor for a Suds SOAP web service client.
 
-* options
+* options - A JavaScript object containing the following properties:
 	* endpoint - the SOAP endpoint you will be using
 	* targetNamespace - the namespace for your service data structures and prefix for SOAP actions - will be in your service WSDL
 	* envelopeBegin (optional) - a string containing the XML preceding the contents of the SOAP request body
