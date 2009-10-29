@@ -39,7 +39,7 @@ Constructor for a Suds SOAP web service client.
 	* envelopeBegin (optional) - a string containing the XML preceding the contents of the SOAP request body
 	* envelopeEnd (optional) - a string containing the XML following the contents of the SOAP request body
 	
-### `sudsClient.invoke(soapAction, callback(xmlDoc), body)`
+### `sudsClient.invoke(soapAction, body, callback(xmlDoc))`
 
 Invoke a SOAP action on the web service defined by this Suds instance.
 
