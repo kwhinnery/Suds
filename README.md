@@ -29,7 +29,7 @@ dependent upon it and can be used independently.
 The following is the current API documentation for Suds, which consists of a constructor for the client and an `invoke`
 method on the client to call specific services on your endpoint.  Impressive, no?
 
-### SudsClient(options)
+### `SudsClient(options)`
 
 Constructor for a Suds SOAP web service client.
 
@@ -39,7 +39,7 @@ Constructor for a Suds SOAP web service client.
 	* envelopeBegin (optional) - a string containing the XML preceding the contents of the SOAP request body
 	* envelopeEnd (optional) - a string containing the XML following the contents of the SOAP request body
 	
-### sudsClient.invoke(soapAction, callback(xmlDoc), body)
+### `sudsClient.invoke(soapAction, callback(xmlDoc), body)`
 
 Invoke a SOAP action on the web service defined by this Suds instance.
 
