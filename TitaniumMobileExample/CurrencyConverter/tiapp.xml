@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+<id>com.lightrail.converter</id>
+<name>CurrencyConverter</name>
+<version>1.0</version>
+<icon>appicon.png</icon>
+<persistent-wifi>false</persistent-wifi>
+<prerendered-icon>false</prerendered-icon>
+<statusbar-style>opaque</statusbar-style>
+<windows>
+	<window>
+		<id>initial</id>
+		<url>index.html</url>
+		<title>Currency Converter</title>
+		<backgroundColor>#fff</backgroundColor>
+		<barColor>#000</barColor>
+		<fullscreen>false</fullscreen>
+	</window>
+</windows>
+<guid>e5faa4c85fe74b1aaa7d6cfc4b94c39d</guid>
+</ti:app>

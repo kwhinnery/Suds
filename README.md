@@ -2,25 +2,33 @@
 
 > XML is like violence - if it doesn't solve your problem, you're probably not using enough of it.
 
-Suds is a lightweight SOAP client library for JavaScript, initially tested for [Titanium Mobile](http://www.appcelerator.com),
-with Titanium Desktop and the browser soon to follow.
+Suds is a lightweight SOAP client library for JavaScript.  Suds has been tested on the following platforms:
+
+* Titanium Desktop (0.7.0)
+* Titanium Mobile (0.7.1)
+
+For more information on creating native desktop and mobile apps with HTML, JavaScript, and CSS, 
+[check out the Appcelerator home page](http://www.appcelerator.com).  Suds should also run in the web browser
+against SOAP web services, with the usual cross-domain restrictions.  Suds has yet to be tested in the browser,
+however, so your mileage may vary.  
 
 ## Usage
 
-		var suds = new SudsClient({ 
-			endpoint: "http://www.mysoapendpoint.com/AwesomeService.asmx",
-			targetNamespace: "http://www.mysoapendpoint.com/Awesome" 
-		});	
-		
-		suds.invoke("AwesomeMethod", { awesomeParameter: "AWESOME" }, function(xmlDoc) {
-			//Parse XML response (SOAP Envelope)
-		});
+	var suds = new SudsClient({ 
+	  endpoint: "http://webservice.webserviceshare.com/currencyconverter/rates.asmx",
+	  targetNamespace: "http://websevriceshare.com/" 
+	});
+	
+	suds.invoke("GetSupportedCurrencies", {}, function(xmlDoc) {
+	  //Parse XML response (SOAP Envelope)
+	});
 		
 ## API
 
-The following is the current API documentation for Suds.  Impressive, no?
+The following is the current API documentation for Suds, which consists of a constructor for the client and an `invoke`
+method on the client to call specific services on your endpoint.  Impressive, no?
 
-## SudsClient(options)
+### SudsClient(options)
 
 Constructor for a Suds SOAP web service client.
 
@@ -30,7 +38,7 @@ Constructor for a Suds SOAP web service client.
 	* envelopeBegin (optional) - a string containing the XML preceding the contents of the SOAP request body
 	* envelopeEnd (optional) - a string containing the XML following the contents of the SOAP request body
 	
-## sudsClient.invoke(soapAction, body, callback(xmlDoc))
+### sudsClient.invoke(soapAction, callback(xmlDoc), body)
 
 Invoke a SOAP action on the web service defined by this Suds instance.
 
@@ -41,3 +49,9 @@ Invoke a SOAP action on the web service defined by this Suds instance.
 * callback - a callback function to process the request result, with the following information
 	* [this] - `this` inside your callback will refer to the XHR object used to make the SOAP web service call
 	* xmlDoc - An [XML Document Object](http://www.w3schools.com/Dom/default.asp) containing the SOAP response
+	
+## Examples
+
+Example applications using Suds for Titanium Mobile and Desktop are located in this project as well.
+Feel free to pull them down and import into Titanium Developer to see these projects in action.  They
+should work out of the box using a publicly available SOAP web service.

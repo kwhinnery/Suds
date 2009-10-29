@@ -73,8 +73,8 @@ function SudsClient(_options) {
   var config = extend({
     endpoint:'http://localhost',
     targetNamespace: 'http://localhost',
-    envelopeBegin: '<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body>',
-    envelopeEnd: '</SOAP-ENV:Body></SOAP-ENV:Envelope>'
+    envelopeBegin: '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body>',
+    envelopeEnd: '</soap:Body></soap:Envelope>'
   },_options);
   
   // Invoke a web service
@@ -89,6 +89,15 @@ function SudsClient(_options) {
       body += '</'+_soapAction+'>';
     }
     
+    //Build Soapaction header - if no trailing slash in namespace, need to splice one in for soap action
+    var soapAction = '';
+    if (config.targetNamespace.lastIndexOf('/') != config.targetNamespace.length - 1) {
+      soapAction = config.targetNamespace+'/'+_soapAction;
+    }
+    else {
+      soapAction = config.targetNamespace+_soapAction;
+    }
+    
     //POST XML document to service endpoint
     var xhr = getXHR();
     xhr.onload = function() {
@@ -96,7 +105,7 @@ function SudsClient(_options) {
     };
     xhr.open('POST',config.endpoint);
 		xhr.setRequestHeader('Content-Type', 'text/xml');
-		xhr.setRequestHeader('Soapaction', config.targetNamespace+"/"+_soapAction);
-    xhr.send(config.envelopeBegin+body+config.envelopeEnd);
+		xhr.setRequestHeader('Soapaction', soapAction);
+		xhr.send(config.envelopeBegin+body+config.envelopeEnd);
   };
 }
