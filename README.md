@@ -10,7 +10,7 @@ Suds is a lightweight SOAP client library for JavaScript.  Suds has been tested 
 For more information on creating native desktop and mobile apps with HTML, JavaScript, and CSS, 
 [check out the Appcelerator home page](http://www.appcelerator.com).  Suds should also run in the web browser
 against SOAP web services, with the usual cross-domain restrictions.  Suds has yet to be tested in the browser,
-however, so your mileage may vary.  *NOTE*: While jQuery 1.3 is used in the example applications, Suds is not
+however, so your mileage may vary.  _NOTE:_ While jQuery 1.3 is used in the example applications, Suds is not
 dependent upon it and can be used independently.
 
 ## Usage
