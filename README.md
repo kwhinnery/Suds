@@ -1,6 +1,6 @@
 # Suds: A JavaScript SOAP Client Library
 
-> XML is like violence - if it doesn't solve your problem, you're probably not using enough of it.
+> _XML is like violence - if it doesn't solve your problem, you're probably not using enough of it._
 
 Suds is a lightweight SOAP client library for JavaScript.  Suds has been tested on the following platforms:
 
