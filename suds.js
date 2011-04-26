@@ -92,7 +92,7 @@ function SudsClient(_options) {
     //Allow straight string input for XML body - if not, build from object
     if (typeof body !== 'string') {
       body = '<'+_soapAction+' xmlns="'+config.targetNamespace+'">';
-      body += convertToXml(_body, 'ns0');
+      body += convertToXml(_body);
       body += '</'+_soapAction+'>';
     }
 
@@ -124,7 +124,7 @@ function SudsClient(_options) {
         //Allow straight string input for XML body - if not, build from object
         if (typeof header !== 'string') {
           header = '<'+_soapAction+' xmlns="'+config.targetNamespace+'">';
-          header += convertToXml(_header, 'ns0');
+          header += convertToXml(_header);
           header += '</'+_soapAction+'>';
         }
         sendXML = config.envelopeBegin+config.headerBegin+header+config.headerEnd+config.bodyBegin+body+config.envelopeEnd;
