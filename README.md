@@ -38,6 +38,7 @@ Constructor for a Suds SOAP web service client.
 	* targetNamespace - the namespace for your service data structures and prefix for SOAP actions - will be in your service WSDL
 	* envelopeBegin (optional) - a string containing the XML preceding the contents of the SOAP request body
 	* envelopeEnd (optional) - a string containing the XML following the contents of the SOAP request body
+	* authorization (optional) - a string used to specify basic HTTP authorization in the request header
 	
 ### `sudsClient.invoke(soapAction, body, callback(xmlDoc))`
 
