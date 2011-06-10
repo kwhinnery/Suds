@@ -133,6 +133,9 @@ function SudsClient(_options) {
         xhr.setRequestHeader('Content-Type', 'text/xml');
         xhr.setRequestHeader('Content-Length', sendXML.length);
         xhr.setRequestHeader('SOAPAction', soapAction);
+        if (config.authorization !== undefined) {
+	  xhr.setRequestHeader('Authorization', 'Basic ' + config.authorization);
+	}
         xhr.send(sendXML);
   };
 }
