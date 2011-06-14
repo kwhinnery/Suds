@@ -7,8 +7,9 @@
 function SudsClient(_options) {
   //A generic extend function - thanks MooTools
   function extend(original, extended) {
-    for (var key in (extended || {})) {
-      if (obj.hasOwnProperty(key)) {
+    extended = extended || {};
+    for (var key in extended) {
+      if (extended.hasOwnProperty(key)) {
         original[key] = extended[key];
       }
     }
