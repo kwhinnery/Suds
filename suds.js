@@ -81,7 +81,8 @@ function SudsClient(_options) {
     headerEnd: '</soap:Header>',
     bodyBegin:'<soap:Body>',
     envelopeEnd: '</soap:Body></soap:Envelope>',
-    timeout: 5000
+    timeout: 5000, 
+    responseType: 'object'
   },_options);
 
   // Invoke a web service
@@ -112,7 +113,7 @@ function SudsClient(_options) {
     //POST XML document to service endpoint
     var xhr = getXHR();
     xhr.onload = function() {
-      _callback.call(this, xmlDomFromString(this.responseText));
+      _callback.call(this, config.responseType == 'object' ? xmlDomFromString(this.responseText) : this.responseText );
     };
     xhr.onerror = function() {
       _error.call();
