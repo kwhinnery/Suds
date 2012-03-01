@@ -121,7 +121,7 @@ function SudsClient(_options) {
     xhr.setTimeout(config.timeout);
     var sendXML = '';
     if(!header) {
-        sendXML = config.envelopeBegin+body+config.envelopeEnd;
+        sendXML = config.envelopeBegin+config.bodyBegin+body+config.envelopeEnd;
     } else {
         //Allow straight string input for XML body - if not, build from object
         if (typeof header !== 'string') {
