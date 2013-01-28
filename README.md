@@ -1,4 +1,8 @@
-# Suds: A JavaScript SOAP Client Library
+# Unsupported
+
+I am no longer supporting this library - you can check one of the forks for a more up-to-date version.
+
+## Suds: A JavaScript SOAP Client Library
 
 > _XML is like violence - if it doesn't solve your problem, you're probably not using enough of it._
 
