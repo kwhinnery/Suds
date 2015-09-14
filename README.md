@@ -1,6 +1,6 @@
-# Unsupported
+# Unsupported & Alternatives
 
-I am no longer supporting this library - you can check one of the forks for a more up-to-date version.
+I am no longer supporting this library - you can check one of the forks for a more up-to-date version, you can use [SOAP module](https://github.com/smclab/ti-soap) or [Alloy SOAP Sync adapter](https://github.com/HazemKhaled/co.thecodelab.adapter.soap) for Alloy apps
 
 ## Suds: A JavaScript SOAP Client Library
 
