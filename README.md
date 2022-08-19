@@ -51,7 +51,7 @@ Invoke a SOAP action on the web service defined by this Suds instance.
 * soapAction - the web service method to invoke
 * body - can be one of:
 	* An XML string containing the SOAP request body, constructed manually
-	* A JavaScript object containing a hierarchical data structure which can be converted to XML
+	* A [JavaScript](https://www.scaler.com/topics/javascript/what-is-javascript/) object containing a hierarchical data structure which can be converted to XML
 * callback - a callback function to process the request result, with the following information
 	* [this] - `this` inside your callback will refer to the XHR object used to make the SOAP web service call
 	* xmlDoc - An [XML Document Object](http://www.w3schools.com/Dom/default.asp) containing the SOAP response
